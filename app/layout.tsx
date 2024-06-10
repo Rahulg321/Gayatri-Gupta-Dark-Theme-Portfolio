@@ -3,6 +3,8 @@ import "./globals.css";
 import { Inter as FontSans } from "next/font/google";
 import clsx from "clsx";
 import { ThemeProvider } from "@/components/theme-provider";
+import DesktopSidebar from "@/components/Sidebar";
+import { syne, inter } from "./font";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -21,22 +23,25 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <ThemeProvider
-        attribute="class"
-        defaultTheme="system"
-        enableSystem
-        disableTransitionOnChange
+      <body
+        className={clsx(
+          "min-h-screen bg-background font-sans antialiased",
+          inter.variable,
+          syne.variable
+        )}
       >
-        <body
-          className={clsx(
-            "min-h-screen bg-background font-sans antialiased",
-            fontSans.variable,
-            fontSans.className
-          )}
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem
+          disableTransitionOnChange
         >
-          {children}
-        </body>
-      </ThemeProvider>
+          <main className="grid min-h-screen w-full md:grid-cols-[240px_1fr]">
+            <DesktopSidebar />
+            <div>{children}</div>
+          </main>
+        </ThemeProvider>
+      </body>
     </html>
   );
 }
