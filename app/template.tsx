@@ -16,7 +16,7 @@ export default function Template({ children }: { children: React.ReactNode }) {
     () => {
       // gsap code here...
       gsap.fromTo(
-        ".container",
+        ".child-container",
         { opacity: 0 },
         {
           opacity: 1,
@@ -30,7 +30,7 @@ export default function Template({ children }: { children: React.ReactNode }) {
 
   return (
     <div ref={container}>
-      <div className="container">{children}</div>
+      <div className="child-container">{children}</div>
     </div>
   );
 }

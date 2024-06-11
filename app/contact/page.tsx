@@ -21,7 +21,7 @@ const page = () => {
           maxime nemo, laborum inventore eveniet consectetur, cumque repellat
           minus ea alias?
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 mt-8 md:grid-cols-2 gap-4">
           <Card className="bg-primary-foreground">
             <CardHeader>
               <CardTitle>

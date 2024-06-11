@@ -1,0 +1,17 @@
+{
+  "format": "custom",
+  "id": "book",
+  "json": {
+    "Main": {
+      "uid": {
+        "config": {
+          "label": "UID"
+        },
+        "type": "UID"
+      }
+    }
+  },
+  "label": "Book",
+  "repeatable": true,
+  "status": true
+}

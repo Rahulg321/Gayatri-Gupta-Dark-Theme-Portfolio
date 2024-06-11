@@ -5,6 +5,7 @@ import clsx from "clsx";
 import { ThemeProvider } from "@/components/theme-provider";
 import DesktopSidebar from "@/components/Sidebar";
 import { syne, inter } from "./font";
+import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -38,7 +39,7 @@ export default function RootLayout({
         >
           <main className="grid min-h-screen w-full md:grid-cols-[240px_1fr]">
             <DesktopSidebar />
-            <div>{children}</div>
+            {children}
           </main>
         </ThemeProvider>
       </body>

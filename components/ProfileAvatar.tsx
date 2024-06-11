@@ -15,7 +15,7 @@ const ProfileAvatar = () => {
       </Avatar>
       <div>
         <h4>Gayatri Gupta</h4>
-        <span className="text-muted-foreground text-sm">Software Engineer</span>
+        <span className="text-muted-foreground text-sm">Paralegal</span>
       </div>
     </div>
   );
