@@ -1,13 +1,19 @@
 "use client";
 
 import { createClient } from "@/prismicio";
-import { usePathname, useSearchParams } from "next/navigation";
-import { useRouter } from "next/router";
+import { Content } from "@prismicio/client";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import React, { useCallback } from "react";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
-const CategoryList = async () => {
+const CategoryList = ({ post }: { post: Content.CategoryDocument[] }) => {
   const client = createClient();
-  const categories = await client.getAllByType("category");
   const router = useRouter();
   const pathname = usePathname();
 
@@ -25,11 +31,23 @@ const CategoryList = async () => {
 
   return (
     <div>
-      <ul>
-        {categories.map((category) => (
-          <li key={category.id}>{category.data.name}</li>
-        ))}
-      </ul>
+      <Select
+        onValueChange={(value) =>
+          router.push(pathname + "?" + createQueryString("tag", value))
+        }
+      >
+        <SelectTrigger className="w-[180px]">
+          <SelectValue placeholder="Select a category" />
+        </SelectTrigger>
+        <SelectContent>
+          <SelectItem value={"all"}>All</SelectItem>
+          {post.map((category) => (
+            <SelectItem key={category.uid} value={category.uid}>
+              {category.data.name}
+            </SelectItem>
+          ))}
+        </SelectContent>
+      </Select>
     </div>
   );
 };

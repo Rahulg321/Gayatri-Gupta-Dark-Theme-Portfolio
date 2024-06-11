@@ -19,23 +19,25 @@ import { ModeToggle } from "./theme-toggle";
 const DesktopSidebar = () => {
   return (
     <div className="border-r-4 px-4 py-6 bg-primary-foreground">
-      <ProfileAvatar />
-      <nav className=" mt-4 space-y-2">
-        <NavLink label="Home" href="/" icon={<Home />} />
-        <NavLink label="Projects" href="/projects" icon={<GanttChart />} />
-        <NavLink label="Blogs" href="/blogs" icon={<FileText />} />
-        <NavLink label="Photos" href="/photos" icon={<Camera />} />
-        <NavLink label="Music" href="/photos" icon={<Music />} />
-        <NavLink label="Books" href="/photos" icon={<BookOpen />} />
-        <NavLink label="About" href="/about" icon={<CircleUserRound />} />
-      </nav>
-      <h4 className="mt-8">Connect</h4>
-      <div className=" mt-2 space-y-2">
-        <NavLink label="Contact" href="/contact" icon={<FileText />} />
-        <NavLinkArrow label="LinkedIn" href="" icon={<Linkedin />} />
-        <NavLinkArrow label="Upwork" href="" icon={<Briefcase />} />
+      <div className="sticky top-6">
+        <ProfileAvatar />
+        <nav className=" mt-4 space-y-2">
+          <NavLink label="Home" href="/" icon={<Home />} />
+          <NavLink label="Projects" href="/projects" icon={<GanttChart />} />
+          <NavLink label="Blogs" href="/blogs" icon={<FileText />} />
+          <NavLink label="Photos" href="/photos" icon={<Camera />} />
+          <NavLink label="Music" href="/photos" icon={<Music />} />
+          <NavLink label="Books" href="/photos" icon={<BookOpen />} />
+          <NavLink label="About" href="/about" icon={<CircleUserRound />} />
+        </nav>
+        <h4 className="mt-8">Connect</h4>
+        <div className=" mt-2 space-y-2">
+          <NavLink label="Contact" href="/contact" icon={<FileText />} />
+          <NavLinkArrow label="LinkedIn" href="" icon={<Linkedin />} />
+          <NavLinkArrow label="Upwork" href="" icon={<Briefcase />} />
+        </div>
+        <ModeToggle />
       </div>
-      <ModeToggle />
     </div>
   );
 };

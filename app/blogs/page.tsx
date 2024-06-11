@@ -13,13 +13,15 @@ const page = async ({
   };
 }) => {
   const client = createClient();
-  //   const categories = await client.getAllByType("category");
+  const categories = await client.getAllByType("category");
   const tag = searchParams?.tag || "all";
   return (
-    <div>
-      <h1>Blogs</h1>
+    <section className="block-space big-container">
+      <div className="flex justify-between">
+        <h1>Blogs</h1>
 
-      <CategoryList />
+        <CategoryList post={categories} />
+      </div>
       <Suspense
         fallback={
           <div className="space-y-4">
@@ -34,7 +36,7 @@ const page = async ({
       >
         <FetchBlogs tag={tag} />
       </Suspense>
-    </div>
+    </section>
   );
 };
 

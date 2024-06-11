@@ -1,15 +1,28 @@
 import { Content } from "@prismicio/client";
+import { PrismicNextImage } from "@prismicio/next";
+import clsx from "clsx";
+import Link from "next/link";
 import React from "react";
+import { Card, CardFooter, CardHeader } from "./ui/card";
 
 type BlogCardProps = {
   post: Content.BlogpostDocument;
 };
 
 const BlogCard = ({ post }: BlogCardProps) => {
+  const { title, featured_image } = post.data;
   return (
-    <div>
-      <h1>{post.data.title}</h1>
-    </div>
+    <Card className="">
+      <Link href={`/blogs/${post.uid}`}>
+        <PrismicNextImage field={featured_image} className="aspect-auto" />
+        <CardHeader>
+          <h4>{title}</h4>
+        </CardHeader>
+        <CardFooter>
+          <h5 className="text-muted-foreground">Read more</h5>
+        </CardFooter>
+      </Link>
+    </Card>
   );
 };
 
