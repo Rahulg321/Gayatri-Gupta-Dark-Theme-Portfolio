@@ -17,14 +17,17 @@ const page = async ({
   const tag = searchParams?.tag || "all";
   return (
     <section className="block-space big-container">
-      <div className="flex flex-col  gap-4 md:flex-row md:justify-between">
+      <div className="flex flex-col mb-8  gap-4 md:flex-row md:justify-between">
         <h2>Blogs</h2>
 
         <CategoryList post={categories} />
       </div>
       <Suspense
         fallback={
-          <div className="space-y-4">
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+            <BlogCardSkeleton />
+            <BlogCardSkeleton />
+            <BlogCardSkeleton />
             <BlogCardSkeleton />
             <BlogCardSkeleton />
             <BlogCardSkeleton />

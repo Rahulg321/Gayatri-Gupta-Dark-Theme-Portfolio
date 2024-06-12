@@ -4,9 +4,9 @@ import React from "react";
 
 const FetchGallery = async () => {
   // await 3 sec
+  // await new Promise((resolve) => setTimeout(resolve, 20000));
   const client = createClient();
   const images = await client.getAllByType("galleryimages");
-  console.log("images are", images[0].data.images);
   const finalImages = images[0].data.images;
   return (
     <div className="blog-index">

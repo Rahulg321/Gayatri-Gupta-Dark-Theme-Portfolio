@@ -5,6 +5,7 @@ import BlogCard from "./BlogCard";
 
 const FetchBlogs = async ({ tag }: { tag: string }) => {
   // await 3 sec
+  // await new Promise((resolve) => setTimeout(resolve, 20000));
   const client = createClient();
   let blogposts;
 
@@ -24,6 +25,9 @@ const FetchBlogs = async ({ tag }: { tag: string }) => {
   }
   return (
     <div className="blog-index">
+      {blogposts.map((e) => {
+        return <BlogCard post={e} key={e.id} />;
+      })}
       {blogposts.map((e) => {
         return <BlogCard post={e} key={e.id} />;
       })}

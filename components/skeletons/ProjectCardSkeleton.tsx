@@ -1,7 +1,7 @@
 import React from "react";
 import { Skeleton } from "../ui/skeleton";
 
-const BlogCardSkeleton = () => {
+const ProjectCardSkeleton = () => {
   return (
     <div>
       <Skeleton className="w-full h-[50px] md:h-[100px] lg:md:h-[130px] bg-muted rounded-lg" />
@@ -9,4 +9,4 @@ const BlogCardSkeleton = () => {
   );
 };
 
-export default BlogCardSkeleton;
+export default ProjectCardSkeleton;

@@ -1,17 +1,53 @@
 {
   "format": "custom",
   "id": "book",
+  "label": "Book",
+  "repeatable": true,
+  "status": true,
   "json": {
     "Main": {
+      "title": {
+        "type": "Text",
+        "config": {
+          "label": "Title",
+          "placeholder": ""
+        }
+      },
       "uid": {
         "config": {
           "label": "UID"
         },
         "type": "UID"
+      },
+      "book_image": {
+        "type": "Image",
+        "config": {
+          "label": "Book Image",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "author": {
+        "type": "Text",
+        "config": {
+          "label": "Author",
+          "placeholder": ""
+        }
+      },
+      "finishing_date": {
+        "type": "Date",
+        "config": {
+          "label": "Finishing Date",
+          "placeholder": ""
+        }
+      },
+      "rating": {
+        "type": "Number",
+        "config": {
+          "label": "Rating",
+          "placeholder": ""
+        }
       }
     }
-  },
-  "label": "Book",
-  "repeatable": true,
-  "status": true
+  }
 }

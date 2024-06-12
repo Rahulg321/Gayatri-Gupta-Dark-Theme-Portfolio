@@ -26,7 +26,7 @@ const DesktopSidebar = () => {
           <NavLink label="Projects" href="/projects" icon={<GanttChart />} />
           <NavLink label="Blogs" href="/blogs" icon={<FileText />} />
           <NavLink label="Photos" href="/photos" icon={<Camera />} />
-          <NavLink label="Books" href="/photos" icon={<BookOpen />} />
+          <NavLink label="Books" href="/books" icon={<BookOpen />} />
           <NavLink label="About" href="/about" icon={<CircleUserRound />} />
         </nav>
         <h4 className="mt-8">Connect</h4>

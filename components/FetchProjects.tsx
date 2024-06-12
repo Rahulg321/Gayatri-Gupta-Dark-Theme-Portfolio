@@ -12,7 +12,7 @@ import { CircleArrowRight } from "lucide-react";
 
 const FetchProjects = async () => {
   //await 3 seconds
-  //   await new Promise((resolve) => setTimeout(resolve, 3000));
+  // await new Promise((resolve) => setTimeout(resolve, 20000));
   const client = createClient();
   const projects = await client.getAllByType("project");
   return (

@@ -1,15 +1,14 @@
-import FetchGallery from "@/components/FetchGallery";
+import FetchBooks from "@/components/FetchBooks";
 import BlogCardSkeleton from "@/components/skeletons/BlogCardSkeleton";
-import { Camera } from "lucide-react";
 import React, { Suspense } from "react";
 
 const page = () => {
   return (
-    <section>
-      <div className="block-space narrow-container">
-        <h2 className="text-center">Photos</h2>
+    <section className="block-space">
+      <div className="text-center mb-4 md:mb-8">
+        <h2 className="">Books I have read</h2>
       </div>
-      <div>
+      <div className="big-container">
         <Suspense
           fallback={
             <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
@@ -25,7 +24,7 @@ const page = () => {
             </div>
           }
         >
-          <FetchGallery />
+          <FetchBooks />
         </Suspense>
       </div>
     </section>
