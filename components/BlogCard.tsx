@@ -4,6 +4,7 @@ import clsx from "clsx";
 import Link from "next/link";
 import React from "react";
 import { Card, CardFooter, CardHeader } from "./ui/card";
+import { CircleArrowRight, MoveUpRight } from "lucide-react";
 
 type BlogCardProps = {
   post: Content.BlogpostDocument;
@@ -19,7 +20,9 @@ const BlogCard = ({ post }: BlogCardProps) => {
           <h4>{title}</h4>
         </CardHeader>
         <CardFooter>
-          <h5 className="text-muted-foreground">Read more</h5>
+          <h5 className="text-muted-foreground flex items-center gap-1">
+            Read more <CircleArrowRight />
+          </h5>
         </CardFooter>
       </Link>
     </Card>

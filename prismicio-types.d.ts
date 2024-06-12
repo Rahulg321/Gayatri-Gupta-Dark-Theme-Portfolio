@@ -174,7 +174,93 @@ export type CategoryDocument<Lang extends string = string> =
     Lang
   >;
 
-type PageDocumentDataSlicesSlice = HeroSlice;
+type GalleryDocumentDataSlicesSlice = never;
+
+/**
+ * Content for Gallery documents
+ */
+interface GalleryDocumentData {
+  /**
+   * Slice Zone field in *Gallery*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: gallery.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<GalleryDocumentDataSlicesSlice> /**
+   * Meta Title field in *Gallery*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: gallery.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_title: prismic.KeyTextField;
+
+  /**
+   * Meta Description field in *Gallery*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: gallery.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *Gallery*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: gallery.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>;
+}
+
+/**
+ * Gallery document from Prismic
+ *
+ * - **API ID**: `gallery`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type GalleryDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<GalleryDocumentData>,
+    "gallery",
+    Lang
+  >;
+
+interface GalleryimagesDocumentData {}
+
+/**
+ * GalleryImages document from Prismic
+ *
+ * - **API ID**: `galleryimages`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type GalleryimagesDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<GalleryimagesDocumentData>,
+    "galleryimages",
+    Lang
+  >;
+
+type PageDocumentDataSlicesSlice =
+  | AboutMainPageSlice
+  | TextBlockSlice
+  | HeroSlice;
 
 /**
  * Content for page documents
@@ -304,8 +390,95 @@ export type AllDocumentTypes =
   | BlogpostDocument
   | BookDocument
   | CategoryDocument
+  | GalleryDocument
+  | GalleryimagesDocument
   | PageDocument
   | ProjectDocument;
+
+/**
+ * Primary content in *AboutMainPage → Default → Primary*
+ */
+export interface AboutMainPageSliceDefaultPrimary {
+  /**
+   * Heading field in *AboutMainPage → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about_main_page.default.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  heading: prismic.KeyTextField;
+
+  /**
+   * Content field in *AboutMainPage → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about_main_page.default.primary.content
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  content: prismic.RichTextField;
+}
+
+/**
+ * Default variation for AboutMainPage Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type AboutMainPageSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<AboutMainPageSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *AboutMainPage*
+ */
+type AboutMainPageSliceVariation = AboutMainPageSliceDefault;
+
+/**
+ * AboutMainPage Shared Slice
+ *
+ * - **API ID**: `about_main_page`
+ * - **Description**: AboutMainPage
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type AboutMainPageSlice = prismic.SharedSlice<
+  "about_main_page",
+  AboutMainPageSliceVariation
+>;
+
+/**
+ * Default variation for GallerySlice Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type GallerySliceSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Record<string, never>,
+  never
+>;
+
+/**
+ * Slice variation for *GallerySlice*
+ */
+type GallerySliceSliceVariation = GallerySliceSliceDefault;
+
+/**
+ * GallerySlice Shared Slice
+ *
+ * - **API ID**: `gallery_slice`
+ * - **Description**: GallerySlice
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type GallerySliceSlice = prismic.SharedSlice<
+  "gallery_slice",
+  GallerySliceSliceVariation
+>;
 
 /**
  * Default variation for Hero Slice
@@ -397,6 +570,11 @@ declare module "@prismicio/client" {
       BookDocumentData,
       CategoryDocument,
       CategoryDocumentData,
+      GalleryDocument,
+      GalleryDocumentData,
+      GalleryDocumentDataSlicesSlice,
+      GalleryimagesDocument,
+      GalleryimagesDocumentData,
       PageDocument,
       PageDocumentData,
       PageDocumentDataSlicesSlice,
@@ -404,6 +582,13 @@ declare module "@prismicio/client" {
       ProjectDocumentData,
       ProjectDocumentDataSlicesSlice,
       AllDocumentTypes,
+      AboutMainPageSlice,
+      AboutMainPageSliceDefaultPrimary,
+      AboutMainPageSliceVariation,
+      AboutMainPageSliceDefault,
+      GallerySliceSlice,
+      GallerySliceSliceVariation,
+      GallerySliceSliceDefault,
       HeroSlice,
       HeroSliceVariation,
       HeroSliceDefault,

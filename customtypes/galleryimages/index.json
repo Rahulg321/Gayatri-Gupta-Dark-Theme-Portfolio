@@ -1,0 +1,10 @@
+{
+  "format": "custom",
+  "id": "galleryimages",
+  "json": {
+    "Main": {}
+  },
+  "label": "GalleryImages",
+  "repeatable": false,
+  "status": true
+}

@@ -3,9 +3,10 @@ import "./globals.css";
 import { Inter as FontSans } from "next/font/google";
 import clsx from "clsx";
 import { ThemeProvider } from "@/components/theme-provider";
-import DesktopSidebar from "@/components/Sidebar";
 import { syne, inter } from "./font";
 import Footer from "@/components/Footer";
+import MobileNavSheet from "@/components/MobileNavSheet";
+import DesktopSidebar from "@/components/Sidebar";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -38,6 +39,9 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <main className="grid min-h-screen w-full md:grid-cols-[240px_1fr]">
+            <div className="fixed bottom-6 left-6 z-30 md:hidden">
+              <MobileNavSheet />
+            </div>
             <DesktopSidebar />
             {children}
           </main>
