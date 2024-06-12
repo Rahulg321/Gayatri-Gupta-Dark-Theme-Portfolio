@@ -321,12 +321,45 @@ interface PageDocumentData {
 export type PageDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<PageDocumentData>, "page", Lang>;
 
-type ProjectDocumentDataSlicesSlice = never;
+type ProjectDocumentDataSlicesSlice = TextBlockSlice;
 
 /**
  * Content for Project documents
  */
 interface ProjectDocumentData {
+  /**
+   * Title field in *Project*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: project.title
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Date Published field in *Project*
+   *
+   * - **Field Type**: Date
+   * - **Placeholder**: *None*
+   * - **API ID Path**: project.date_published
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#date
+   */
+  date_published: prismic.DateField;
+
+  /**
+   * Timeline field in *Project*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: project.timeline
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  timeline: prismic.KeyTextField;
+
   /**
    * Slice Zone field in *Project*
    *
@@ -337,6 +370,17 @@ interface ProjectDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#slices
    */
   slices: prismic.SliceZone<ProjectDocumentDataSlicesSlice> /**
+   * Meta Title field in *Project*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: project.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_title: prismic.KeyTextField;
+
+  /**
    * Meta Description field in *Project*
    *
    * - **Field Type**: Text
@@ -344,7 +388,7 @@ interface ProjectDocumentData {
    * - **API ID Path**: project.meta_description
    * - **Tab**: SEO & Metadata
    * - **Documentation**: https://prismic.io/docs/field#key-text
-   */;
+   */
   meta_description: prismic.KeyTextField;
 
   /**
@@ -357,17 +401,6 @@ interface ProjectDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   meta_image: prismic.ImageField<never>;
-
-  /**
-   * Meta Title field in *Project*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: A title of the page used for social media and search engines
-   * - **API ID Path**: project.meta_title
-   * - **Tab**: SEO & Metadata
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  meta_title: prismic.KeyTextField;
 }
 
 /**
