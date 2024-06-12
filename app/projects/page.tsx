@@ -5,7 +5,7 @@ import React, { Suspense } from "react";
 const page = async () => {
   return (
     <section className="block-space narrow-container">
-      <h2>Projects</h2>
+      <h2 className="mb-6">Projects</h2>
       <Suspense fallback={<div>Loading...</div>}>
         <FetchProjects />
       </Suspense>

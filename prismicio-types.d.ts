@@ -174,72 +174,36 @@ export type CategoryDocument<Lang extends string = string> =
     Lang
   >;
 
-type GalleryDocumentDataSlicesSlice = never;
-
 /**
- * Content for Gallery documents
+ * Item in *GalleryImages → Images*
  */
-interface GalleryDocumentData {
+export interface GalleryimagesDocumentDataImagesItem {
   /**
-   * Slice Zone field in *Gallery*
-   *
-   * - **Field Type**: Slice Zone
-   * - **Placeholder**: *None*
-   * - **API ID Path**: gallery.slices[]
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#slices
-   */
-  slices: prismic.SliceZone<GalleryDocumentDataSlicesSlice> /**
-   * Meta Title field in *Gallery*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: A title of the page used for social media and search engines
-   * - **API ID Path**: gallery.meta_title
-   * - **Tab**: SEO & Metadata
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */;
-  meta_title: prismic.KeyTextField;
-
-  /**
-   * Meta Description field in *Gallery*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: A brief summary of the page
-   * - **API ID Path**: gallery.meta_description
-   * - **Tab**: SEO & Metadata
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  meta_description: prismic.KeyTextField;
-
-  /**
-   * Meta Image field in *Gallery*
+   * GalleryImage field in *GalleryImages → Images*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
-   * - **API ID Path**: gallery.meta_image
-   * - **Tab**: SEO & Metadata
+   * - **API ID Path**: galleryimages.images[].galleryimage
    * - **Documentation**: https://prismic.io/docs/field#image
    */
-  meta_image: prismic.ImageField<never>;
+  galleryimage: prismic.ImageField<never>;
 }
 
 /**
- * Gallery document from Prismic
- *
- * - **API ID**: `gallery`
- * - **Repeatable**: `false`
- * - **Documentation**: https://prismic.io/docs/custom-types
- *
- * @typeParam Lang - Language API ID of the document.
+ * Content for GalleryImages documents
  */
-export type GalleryDocument<Lang extends string = string> =
-  prismic.PrismicDocumentWithoutUID<
-    Simplify<GalleryDocumentData>,
-    "gallery",
-    Lang
-  >;
-
-interface GalleryimagesDocumentData {}
+interface GalleryimagesDocumentData {
+  /**
+   * Images field in *GalleryImages*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: galleryimages.images[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  images: prismic.GroupField<Simplify<GalleryimagesDocumentDataImagesItem>>;
+}
 
 /**
  * GalleryImages document from Prismic
@@ -423,7 +387,6 @@ export type AllDocumentTypes =
   | BlogpostDocument
   | BookDocument
   | CategoryDocument
-  | GalleryDocument
   | GalleryimagesDocument
   | PageDocument
   | ProjectDocument;
@@ -603,11 +566,9 @@ declare module "@prismicio/client" {
       BookDocumentData,
       CategoryDocument,
       CategoryDocumentData,
-      GalleryDocument,
-      GalleryDocumentData,
-      GalleryDocumentDataSlicesSlice,
       GalleryimagesDocument,
       GalleryimagesDocumentData,
+      GalleryimagesDocumentDataImagesItem,
       PageDocument,
       PageDocumentData,
       PageDocumentDataSlicesSlice,

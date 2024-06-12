@@ -18,7 +18,7 @@ const page = async ({
   return (
     <section className="block-space big-container">
       <div className="flex flex-col  gap-4 md:flex-row md:justify-between">
-        <h1>Blogs</h1>
+        <h2>Blogs</h2>
 
         <CategoryList post={categories} />
       </div>
