@@ -1,0 +1,48 @@
+{
+  "id": "column_heading_button",
+  "type": "SharedSlice",
+  "name": "ColumnHeadingButton",
+  "description": "ColumnHeadingButton",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "heading": {
+          "type": "Text",
+          "config": {
+            "label": "Heading",
+            "placeholder": ""
+          }
+        },
+        "tagline": {
+          "type": "Text",
+          "config": {
+            "label": "Tagline",
+            "placeholder": ""
+          }
+        },
+        "iconbuttonlabel": {
+          "type": "Text",
+          "config": {
+            "label": "IconButtonLabel",
+            "placeholder": ""
+          }
+        },
+        "iconbuttonlink": {
+          "type": "Link",
+          "config": {
+            "label": "IconButtonLink",
+            "placeholder": "",
+            "select": null
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

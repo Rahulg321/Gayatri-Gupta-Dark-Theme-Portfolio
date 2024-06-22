@@ -1,0 +1,16 @@
+{
+  "id": "muted_info_cards",
+  "type": "SharedSlice",
+  "name": "MutedInfoCards",
+  "description": "MutedInfoCards",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": ""
+    }
+  ]
+}

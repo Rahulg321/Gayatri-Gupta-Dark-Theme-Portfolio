@@ -26,7 +26,7 @@ const BlogCard = ({ post }: BlogCardProps) => {
   });
 
   return (
-    <Card className="">
+    <Card className="shadow-lg border-2">
       <Link href={`/blogs/${post.uid}`}>
         <PrismicNextImage field={featured_image} className="aspect-auto" />
         <CardHeader>

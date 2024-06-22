@@ -19,7 +19,7 @@ const AboutMainPage = ({ slice }: AboutMainPageProps): JSX.Element => {
     >
       <div className="space-y-4">
         <h2>{slice.primary.heading}</h2>
-        <div className="prose dark:prose-invert">
+        <div className="prose dark:prose-invert w-full max-w-none md:prose-lg">
           <PrismicRichText field={slice.primary.content} />
         </div>
       </div>

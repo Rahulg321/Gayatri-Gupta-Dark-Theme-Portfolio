@@ -28,9 +28,6 @@ const FetchBlogs = async ({ tag }: { tag: string }) => {
       {blogposts.map((e) => {
         return <BlogCard post={e} key={e.id} />;
       })}
-      {blogposts.map((e) => {
-        return <BlogCard post={e} key={e.id} />;
-      })}
     </div>
   );
 };

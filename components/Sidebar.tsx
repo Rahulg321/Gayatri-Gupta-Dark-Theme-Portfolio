@@ -18,10 +18,10 @@ import { ModeToggle } from "./theme-toggle";
 
 const DesktopSidebar = () => {
   return (
-    <div className=" hidden md:block border-r-4 px-4 py-6 bg-primary-foreground">
+    <div className="h-full hidden md:block border-r-4 px-4 py-6 bg-primary-foreground">
       <div className="sticky top-6">
         <ProfileAvatar />
-        <nav className=" mt-4 space-y-2">
+        <nav className="mt-4 space-y-2">
           <NavLink label="Home" href="/" icon={<Home />} />
           <NavLink label="Projects" href="/projects" icon={<GanttChart />} />
           <NavLink label="Blogs" href="/blogs" icon={<FileText />} />
@@ -35,7 +35,9 @@ const DesktopSidebar = () => {
           <NavLinkArrow label="LinkedIn" href="" icon={<Linkedin />} />
           <NavLinkArrow label="Upwork" href="" icon={<Briefcase />} />
         </div>
-        <ModeToggle />
+        <div className="mt-4">
+          <ModeToggle />
+        </div>
       </div>
     </div>
   );

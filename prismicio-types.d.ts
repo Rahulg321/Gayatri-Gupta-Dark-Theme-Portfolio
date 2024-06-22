@@ -279,6 +279,79 @@ export type GalleryimagesDocument<Lang extends string = string> =
     Lang
   >;
 
+type HomepageDocumentDataSlicesSlice =
+  | MutedInfoCardsSlice
+  | StickyColumnSlice
+  | HeadingContentButtonSlice
+  | ColumnHeadingButtonSlice
+  | TextBlockSlice
+  | HeroSlice
+  | GallerySliceSlice
+  | AboutMainPageSlice;
+
+/**
+ * Content for Homepage documents
+ */
+interface HomepageDocumentData {
+  /**
+   * Slice Zone field in *Homepage*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: homepage.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<HomepageDocumentDataSlicesSlice> /**
+   * Meta Title field in *Homepage*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: homepage.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_title: prismic.KeyTextField;
+
+  /**
+   * Meta Description field in *Homepage*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: homepage.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *Homepage*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: homepage.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>;
+}
+
+/**
+ * Homepage document from Prismic
+ *
+ * - **API ID**: `homepage`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type HomepageDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<HomepageDocumentData>,
+    "homepage",
+    Lang
+  >;
+
 type PageDocumentDataSlicesSlice =
   | AboutMainPageSlice
   | TextBlockSlice
@@ -446,6 +519,7 @@ export type AllDocumentTypes =
   | BookDocument
   | CategoryDocument
   | GalleryimagesDocument
+  | HomepageDocument
   | PageDocument
   | ProjectDocument;
 
@@ -505,6 +579,81 @@ export type AboutMainPageSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *ColumnHeadingButton → Default → Primary*
+ */
+export interface ColumnHeadingButtonSliceDefaultPrimary {
+  /**
+   * Heading field in *ColumnHeadingButton → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: column_heading_button.default.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  heading: prismic.KeyTextField;
+
+  /**
+   * Tagline field in *ColumnHeadingButton → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: column_heading_button.default.primary.tagline
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  tagline: prismic.KeyTextField;
+
+  /**
+   * IconButtonLabel field in *ColumnHeadingButton → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: column_heading_button.default.primary.iconbuttonlabel
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  iconbuttonlabel: prismic.KeyTextField;
+
+  /**
+   * IconButtonLink field in *ColumnHeadingButton → Default → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: column_heading_button.default.primary.iconbuttonlink
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  iconbuttonlink: prismic.LinkField;
+}
+
+/**
+ * Default variation for ColumnHeadingButton Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ColumnHeadingButtonSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ColumnHeadingButtonSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *ColumnHeadingButton*
+ */
+type ColumnHeadingButtonSliceVariation = ColumnHeadingButtonSliceDefault;
+
+/**
+ * ColumnHeadingButton Shared Slice
+ *
+ * - **API ID**: `column_heading_button`
+ * - **Description**: ColumnHeadingButton
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ColumnHeadingButtonSlice = prismic.SharedSlice<
+  "column_heading_button",
+  ColumnHeadingButtonSliceVariation
+>;
+
+/**
  * Default variation for GallerySlice Slice
  *
  * - **API ID**: `default`
@@ -535,6 +684,71 @@ export type GallerySliceSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *HeadingContentButton → Default → Primary*
+ */
+export interface HeadingContentButtonSliceDefaultPrimary {
+  /**
+   * heading field in *HeadingContentButton → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: heading_content_button.default.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  heading: prismic.KeyTextField;
+
+  /**
+   * tagline field in *HeadingContentButton → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: heading_content_button.default.primary.tagline
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  tagline: prismic.KeyTextField;
+
+  /**
+   * button label field in *HeadingContentButton → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: heading_content_button.default.primary.button_label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  button_label: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for HeadingContentButton Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type HeadingContentButtonSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<HeadingContentButtonSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *HeadingContentButton*
+ */
+type HeadingContentButtonSliceVariation = HeadingContentButtonSliceDefault;
+
+/**
+ * HeadingContentButton Shared Slice
+ *
+ * - **API ID**: `heading_content_button`
+ * - **Description**: HeadingContentButton
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type HeadingContentButtonSlice = prismic.SharedSlice<
+  "heading_content_button",
+  HeadingContentButtonSliceVariation
+>;
+
+/**
  * Default variation for Hero Slice
  *
  * - **API ID**: `default`
@@ -560,6 +774,66 @@ type HeroSliceVariation = HeroSliceDefault;
  * - **Documentation**: https://prismic.io/docs/slice
  */
 export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>;
+
+/**
+ * Default variation for MutedInfoCards Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type MutedInfoCardsSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Record<string, never>,
+  never
+>;
+
+/**
+ * Slice variation for *MutedInfoCards*
+ */
+type MutedInfoCardsSliceVariation = MutedInfoCardsSliceDefault;
+
+/**
+ * MutedInfoCards Shared Slice
+ *
+ * - **API ID**: `muted_info_cards`
+ * - **Description**: MutedInfoCards
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type MutedInfoCardsSlice = prismic.SharedSlice<
+  "muted_info_cards",
+  MutedInfoCardsSliceVariation
+>;
+
+/**
+ * Default variation for StickyColumn Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type StickyColumnSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Record<string, never>,
+  never
+>;
+
+/**
+ * Slice variation for *StickyColumn*
+ */
+type StickyColumnSliceVariation = StickyColumnSliceDefault;
+
+/**
+ * StickyColumn Shared Slice
+ *
+ * - **API ID**: `sticky_column`
+ * - **Description**: StickyColumn
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type StickyColumnSlice = prismic.SharedSlice<
+  "sticky_column",
+  StickyColumnSliceVariation
+>;
 
 /**
  * Primary content in *TextBlock → Default → Primary*
@@ -627,6 +901,9 @@ declare module "@prismicio/client" {
       GalleryimagesDocument,
       GalleryimagesDocumentData,
       GalleryimagesDocumentDataImagesItem,
+      HomepageDocument,
+      HomepageDocumentData,
+      HomepageDocumentDataSlicesSlice,
       PageDocument,
       PageDocumentData,
       PageDocumentDataSlicesSlice,
@@ -638,12 +915,26 @@ declare module "@prismicio/client" {
       AboutMainPageSliceDefaultPrimary,
       AboutMainPageSliceVariation,
       AboutMainPageSliceDefault,
+      ColumnHeadingButtonSlice,
+      ColumnHeadingButtonSliceDefaultPrimary,
+      ColumnHeadingButtonSliceVariation,
+      ColumnHeadingButtonSliceDefault,
       GallerySliceSlice,
       GallerySliceSliceVariation,
       GallerySliceSliceDefault,
+      HeadingContentButtonSlice,
+      HeadingContentButtonSliceDefaultPrimary,
+      HeadingContentButtonSliceVariation,
+      HeadingContentButtonSliceDefault,
       HeroSlice,
       HeroSliceVariation,
       HeroSliceDefault,
+      MutedInfoCardsSlice,
+      MutedInfoCardsSliceVariation,
+      MutedInfoCardsSliceDefault,
+      StickyColumnSlice,
+      StickyColumnSliceVariation,
+      StickyColumnSliceDefault,
       TextBlockSlice,
       TextBlockSliceDefaultPrimary,
       TextBlockSliceVariation,

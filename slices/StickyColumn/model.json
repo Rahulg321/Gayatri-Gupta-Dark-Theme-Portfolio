@@ -1,0 +1,16 @@
+{
+  "id": "sticky_column",
+  "type": "SharedSlice",
+  "name": "StickyColumn",
+  "description": "StickyColumn",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": ""
+    }
+  ]
+}
