@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
+import Link from "next/link";
 
 /**
  * Props for `HeadingContentButton`.
@@ -21,9 +22,19 @@ const HeadingContentButton = ({
       className="block-space narrow-container"
     >
       <div className="text-center">
-        <h3>{slice.primary.heading}</h3>
-        <p className="text-muted-foreground mb-4">{slice.primary.tagline}</p>
-        <Button>{slice.primary.button_label}</Button>
+        <h3>
+          Seeking a detail-oriented paralegal and a dedicated lawyer? Let's
+          connect!
+        </h3>
+        <p className="text-muted-foreground mb-4">
+          Navigating the legal system can be overwhelming. As your legal team,
+          we provide clear guidance and unwavering support. Benefit from
+          in-depth legal knowledge and exceptional support. Contact me today and
+          let's explore the best path forward for your unique situation.
+        </p>
+        <Button asChild>
+          <Link href="/contact">Connect Today</Link>
+        </Button>
       </div>
     </section>
   );

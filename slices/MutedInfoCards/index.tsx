@@ -21,22 +21,22 @@ const MutedInfoCards = ({ slice }: MutedInfoCardsProps): JSX.Element => {
     >
       <div className="bg-muted rounded-lg border-2">
         <div className="px-6 py-8 border-b-2 dark:border-zinc-700">
-          <h2>Make infra your competitive advantage.</h2>
+          <h2>Discover more about my life</h2>
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-3">
           <SectionCard
-            heading="Seamless Iteration"
-            description="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iusto, perferendis dolorum officia neque praesentium, inventore earum."
+            heading="Books I have read"
+            description="Ever curious about the books that have shaped my thinking and approach? Dive into my Books I've Devoured section to discover a curated list of titles that have inspired and informed me."
             link="lorem"
           />
           <SectionCard
-            heading="Global Performance"
-            description="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iusto, perferendis dolorum officia neque praesentium,."
+            heading="Articles I have written"
+            description="My written articles cover a variety of topics that might pique your interest. Browse through them and discover something new!"
             link=""
           />
           <SectionCard
-            heading="Infinite Scale"
-            description="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iusto, perferendis dolorum officia neque praesentium"
+            heading="Projects I work on"
+            description="I'm constantly pushing myself to learn and grow. Here, you'll find a collection of projects that represent my journey so far. Take a look and see what sparks your interest!"
             link=""
           />
         </div>

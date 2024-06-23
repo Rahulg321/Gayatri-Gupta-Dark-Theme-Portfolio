@@ -20,14 +20,15 @@ const StickyColumn = ({ slice }: StickyColumnProps): JSX.Element => {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
         <div>
           <div className="sticky top-6">
-            <span className="text-muted-foreground">
-              <Pen className="inline-block mr-1 mb-2" /> Composable
+            <span className="text-muted-foreground mb-2">
+              <Pen className="inline-block h-4 w-4 mr-1 mb-2" /> Words of
+              Appreciation
             </span>
-            <h3>Total Control over your content</h3>
+            <h3>Testimonials</h3>
             <p className="text-muted-foreground">
-              The power of your favorite commerce backends, with the freedom of
-              open-source frontend frameworks. From content management to URL
-              pathnames, Vercel gives you total Frontend control.
+              Hear from those who have experienced my dedication firsthand.
+              Their stories reflect my commitment to excellence. Discover how
+              I've helped clients achieve their legal goals.
             </p>
           </div>
         </div>
@@ -36,52 +37,40 @@ const StickyColumn = ({ slice }: StickyColumnProps): JSX.Element => {
             <Quote />
             <div className="mt-4 space-y-2">
               <p className="text-muted-foreground">
-                With our previous managed service, we were restricted to their
-                platform, so we were restricted in what we were able to build.
-                Going headless allowed us to keep the power of that commerce
-                backend, and bring in the UI flexibility of Next.js.
+                I highly recommend Gayatri for her exceptional work at my law
+                firm. She has managed our blog with impressive skills, ensuring
+                informative, accurate, and engaging content. Her administrative
+                support has been invaluable, demonstrating remarkable
+                organizational skills and efficiency. She also drafts engagement
+                letters with precision, contributing to clear client
+                communication. Reliable, dependable, and always willing to go
+                the extra mile, Gayatri is a proactive and adaptable
+                professional who consistently delivers high-quality work. She
+                would be an asset to any organization.
               </p>
               <span className="block text-right">Destiny Aigbe</span>
-              <span className="block text-right">CEO - Aigbe Law Firm</span>
+              <span className="block text-right">
+                Aigbe Law Firm, Dark Alpha Capital
+              </span>
             </div>
           </div>
           <div>
             <Quote />
             <div className="mt-4 space-y-2">
               <p className="text-muted-foreground">
-                With our previous managed service, we were restricted to their
-                platform, so we were restricted in what we were able to build.
-                Going headless allowed us to keep the power of that commerce
-                backend, and bring in the UI flexibility of Next.js.
+                Gayatri has provided exceptional assistance with a domestic
+                violence case at my law firm. She was instrumental in creating a
+                detailed evidence grid for the victim, showcasing her meticulous
+                attention to detail and strong analytical skills. Gayatri
+                consistently adhered to deadlines and was always available when
+                needed, demonstrating exceptional reliability and commitment.
+                Her ability to manage sensitive information with care and her
+                unwavering support throughout the case were invaluable. She is a
+                dedicated and dependable professional who would be a tremendous
+                asset to any team.
               </p>
               <span className="block text-right">Mary Mock</span>
-              <span className="block text-right">Vinasha Publicals</span>
-            </div>
-          </div>
-          <div>
-            <Quote />
-            <div className="mt-4 space-y-2">
-              <p className="text-muted-foreground">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae,
-                rem! Ea cum ab nostrum fugiat voluptas at atque, inventore
-                libero sequi laudantium, esse eos vitae cumque quos earum,
-                voluptatum unde!
-              </p>
-              <span className="block text-right">Joanna Robinson</span>
-              <span className="block text-right">CEO - Aigbe Law Firm</span>
-            </div>
-          </div>
-          <div>
-            <Quote />
-            <div className="mt-4 space-y-2">
-              <p className="text-muted-foreground">
-                With our previous managed service, we were restricted to their
-                platform, so we were restricted in what we were able to build.
-                Going headless allowed us to keep the power of that commerce
-                backend, and bring in the UI flexibility of Next.js.
-              </p>
-              <span className="block text-right">Destiny Aigbe</span>
-              <span className="block text-right">CEO - Aigbe Law Firm</span>
+              <span className="block text-right">Lawyer</span>
             </div>
           </div>
         </div>
