@@ -9,6 +9,7 @@ import {
 } from "@/components/ui/card";
 import { Linkedin, Milestone, Sun } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 const page = () => {
   return (
@@ -41,7 +42,15 @@ const page = () => {
               </p>
             </CardContent>
             <CardFooter>
-              <Button>Send Email</Button>
+              <Button asChild>
+                <Link
+                  href="mailto:advocategayatrigupta@gmail.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Send Email
+                </Link>
+              </Button>
             </CardFooter>
           </Card>
           <Card className="bg-primary-foreground">
@@ -60,7 +69,15 @@ const page = () => {
               </p>
             </CardContent>
             <CardFooter>
-              <Button>DM me on Linkedin</Button>
+              <Button asChild>
+                <Link
+                  href="https://www.linkedin.com/in/gayatri-gupta-377060233/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  DM me on Linkedin
+                </Link>
+              </Button>
             </CardFooter>
           </Card>
         </div>
