@@ -1,6 +1,5 @@
 import { Content } from "@prismicio/client";
 import { PrismicNextImage } from "@prismicio/next";
-import clsx from "clsx";
 import Link from "next/link";
 import React from "react";
 import {
@@ -10,7 +9,9 @@ import {
   CardHeader,
   CardTitle,
 } from "./ui/card";
-import { CircleArrowRight, MoveUpRight } from "lucide-react";
+import { CircleArrowRight } from "lucide-react";
+import * as prismic from "@prismicio/client";
+import { PrismicRichText } from "@prismicio/react";
 
 type BlogCardProps = {
   post: Content.BlogpostDocument;
@@ -30,7 +31,7 @@ const BlogCard = ({ post }: BlogCardProps) => {
       <Link href={`/blogs/${post.uid}`}>
         <PrismicNextImage field={featured_image} className="aspect-auto" />
         <CardHeader>
-          <h4>{title}</h4>
+          <PrismicRichText field={title} />
           <CardDescription>{publicationDateString}</CardDescription>
         </CardHeader>
         <CardFooter>

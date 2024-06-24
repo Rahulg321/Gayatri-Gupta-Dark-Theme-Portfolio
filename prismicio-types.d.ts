@@ -28,13 +28,13 @@ interface BlogpostDocumentData {
   /**
    * Title field in *Blogpost*
    *
-   * - **Field Type**: Text
+   * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
    * - **API ID Path**: blogpost.title
    * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#key-text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  title: prismic.KeyTextField;
+  title: prismic.RichTextField;
 
   /**
    * Featured Image field in *Blogpost*
