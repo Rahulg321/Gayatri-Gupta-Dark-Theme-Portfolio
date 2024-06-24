@@ -7,6 +7,7 @@ import { poppins, inter, montserrat } from "./font";
 import Footer from "@/components/Footer";
 import MobileNavSheet from "@/components/MobileNavSheet";
 import DesktopSidebar from "@/components/Sidebar";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://gayatrilawoffices.in"),
@@ -56,6 +57,7 @@ export default function RootLayout({
           </main>
         </ThemeProvider>
       </body>
+      <GoogleAnalytics gaId="G-BZMSBQV0Q6" />
     </html>
   );
 }

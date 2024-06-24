@@ -19,7 +19,7 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
       className="block-space narrow-container min-h-[90vh] flex items-center justify-center"
     >
       <div className="space-y-4 content-center">
-        <h3 className="text-muted-foreground">Hi I am Gayatri ✋</h3>
+        <h3 className="text-muted-foreground">Hi I am Gayatri 👋</h3>
         <h3>
           I am an Indian attorney and <br /> my mission is to streamline
           operations for law firms.
