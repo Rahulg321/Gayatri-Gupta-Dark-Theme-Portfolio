@@ -21,7 +21,11 @@ const FetchBlogs = async ({ tag }: { tag: string }) => {
   }
 
   if (blogposts.length === 0) {
-    return <div>No blog posts found.</div>;
+    return (
+      <div>
+        <h4>Oops, empty space for now!</h4>
+      </div>
+    );
   }
   return (
     <div className="blog-index">
