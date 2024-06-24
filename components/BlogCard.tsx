@@ -26,14 +26,17 @@ const BlogCard = ({ post }: BlogCardProps) => {
     day: "numeric",
   });
 
+  const newTitle = prismic.asText(title);
+
   return (
     <Card className="shadow-lg border-2">
       <Link href={`/blogs/${post.uid}`}>
         <PrismicNextImage field={featured_image} className="aspect-auto" />
         <CardHeader>
-          <PrismicRichText field={title} />
+          <h4>{newTitle}</h4>
           <CardDescription>{publicationDateString}</CardDescription>
         </CardHeader>
+
         <CardFooter>
           <h5 className="text-muted-foreground flex items-center gap-1">
             Read more <CircleArrowRight />
