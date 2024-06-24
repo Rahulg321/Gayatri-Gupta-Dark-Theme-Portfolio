@@ -21,8 +21,8 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
       <div className="space-y-4 content-center">
         <h3 className="text-muted-foreground">Hi I am Gayatri ✋</h3>
         <h3>
-          I am an Indian attorney and remote paralegal <br /> my mission is to
-          streamline operations for law firms.
+          I am an Indian attorney and <br /> my mission is to streamline
+          operations for law firms.
         </h3>
         <p className="text-muted-foreground">
           Advocate Gayatri Gupta: Delivering Expert Paralegal Assistance and

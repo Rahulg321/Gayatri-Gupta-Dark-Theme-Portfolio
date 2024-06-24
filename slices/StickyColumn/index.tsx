@@ -35,8 +35,8 @@ const StickyColumn = ({ slice }: StickyColumnProps): JSX.Element => {
         <div className="space-y-6">
           <div>
             <Quote />
-            <div className="mt-4 space-y-2">
-              <p className="text-muted-foreground">
+            <div className="mt-4 space-y-2 ">
+              <p className="text-muted-foreground text-pretty">
                 I highly recommend Gayatri for her exceptional work at my law
                 firm. She has managed our blog with impressive skills, ensuring
                 informative, accurate, and engaging content. Her administrative
@@ -57,7 +57,7 @@ const StickyColumn = ({ slice }: StickyColumnProps): JSX.Element => {
           <div>
             <Quote />
             <div className="mt-4 space-y-2">
-              <p className="text-muted-foreground">
+              <p className="text-muted-foreground text-pretty">
                 Gayatri has provided exceptional assistance with a domestic
                 violence case at my law firm. She was instrumental in creating a
                 detailed evidence grid for the victim, showcasing her meticulous
@@ -70,7 +70,7 @@ const StickyColumn = ({ slice }: StickyColumnProps): JSX.Element => {
                 asset to any team.
               </p>
               <span className="block text-right">Mary Mock</span>
-              <span className="block text-right">Lawyer</span>
+              <span className="block text-right">Mock Law, ABC</span>
             </div>
           </div>
         </div>

@@ -27,17 +27,17 @@ const MutedInfoCards = ({ slice }: MutedInfoCardsProps): JSX.Element => {
           <SectionCard
             heading="Books I have read"
             description="Ever curious about the books that have shaped my thinking and approach? Dive into my Books I've Devoured section to discover a curated list of titles that have inspired and informed me."
-            link="lorem"
+            link="/books"
           />
           <SectionCard
             heading="Articles I have written"
             description="My written articles cover a variety of topics that might pique your interest. Browse through them and discover something new!"
-            link=""
+            link="/blogs"
           />
           <SectionCard
             heading="Projects I work on"
             description="I'm constantly pushing myself to learn and grow. Here, you'll find a collection of projects that represent my journey so far. Take a look and see what sparks your interest!"
-            link=""
+            link="/projects"
           />
         </div>
       </div>
