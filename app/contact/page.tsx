@@ -16,10 +16,13 @@ const page = () => {
       <section className="narrow-container block-space">
         <h1>Contact</h1>
         <p>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati
-          eaque quia, libero numquam sapiente ducimus. Cum officiis qui, commodi
-          maxime nemo, laborum inventore eveniet consectetur, cumque repellat
-          minus ea alias?
+          Whether you require legal counsel or freelance expertise, I'm here to
+          collaborate and deliver exceptional results. For legal inquiries, feel
+          free to schedule a consultation using the calendar below. My freelance
+          services are available for project-based work, and you can reach out
+          directly via the contact form to discuss your specific needs and
+          request a quote. Let's connect and turn your legal or project
+          challenges into triumphs.
         </p>
         <div className="grid grid-cols-1 mt-8 md:grid-cols-2 gap-4">
           <Card className="bg-primary-foreground">
