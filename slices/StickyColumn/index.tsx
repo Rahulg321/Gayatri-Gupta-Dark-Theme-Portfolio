@@ -69,8 +69,8 @@ const StickyColumn = ({ slice }: StickyColumnProps): JSX.Element => {
                 dedicated and dependable professional who would be a tremendous
                 asset to any team.
               </p>
-              <span className="block text-right">Renee rodriguez</span>
-              <span className="block text-right">Attorney</span>
+              <span className="block text-right">Renee Rodriguez</span>
+              <span className="block text-right">Best Foot Forward</span>
             </div>
           </div>
         </div>
