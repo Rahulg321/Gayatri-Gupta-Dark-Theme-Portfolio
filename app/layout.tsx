@@ -8,6 +8,7 @@ import Footer from "@/components/Footer";
 import MobileNavSheet from "@/components/MobileNavSheet";
 import DesktopSidebar from "@/components/Sidebar";
 import { GoogleAnalytics } from "@next/third-parties/google";
+import DisclaimerDialog from "@/components/DisclaimerDialog";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://gayatrilawoffices.in"),
@@ -47,6 +48,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <main className="grid min-h-screen w-full h-full md:grid-cols-[240px_1fr]">
+            <DisclaimerDialog />
             <div className="fixed bottom-6 left-6 z-30 md:hidden">
               <MobileNavSheet />
             </div>

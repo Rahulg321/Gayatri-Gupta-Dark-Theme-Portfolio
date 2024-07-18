@@ -64,8 +64,8 @@ const page = () => {
             <CardContent>
               <h4>Linkedin</h4>
               <p className="text-muted-foreground text-sm">
-                I'm very active on X and share value every day over there. Just
-                DM me and I'll get back to you asap!
+                I'm very active on Linkedin and share value every day over
+                there. Just DM me and I'll get back to you asap!
               </p>
             </CardContent>
             <CardFooter>
