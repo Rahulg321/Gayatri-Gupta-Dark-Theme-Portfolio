@@ -41,8 +41,8 @@ const DisclaimerDialog = () => {
           </DialogHeader>
           <div className="flex-grow overflow-y-auto">
             <p>
-              Under the rules of the Bar Council of India, AZB & Partners (the
-              "Firm") is prohibited from soliciting work or advertising. By
+              Under the rules of the Bar Council of India, Gayatri Law Offices
+              (the "Firm") is prohibited from soliciting work or advertising. By
               clicking, "I Agree" below, the user acknowledges that:
             </p>
             <ol className="list-decimal p-4 space-y-2">
